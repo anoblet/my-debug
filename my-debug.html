@@ -1,0 +1,40 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="my-debug">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `my-debug`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class MyDebug extends Polymer.Element {
+      static get is() { return 'my-debug'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'my-debug'
+          }
+        };
+      }
+
+      connectedCallback() {
+        // console.log(this.parentElement.constructor);
+      }
+    }
+
+    window.customElements.define(MyDebug.is, MyDebug);
+  </script>
+</dom-module>
